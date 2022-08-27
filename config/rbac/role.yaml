@@ -1,0 +1,33 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - hook.tutorial.kubebuilder.io
+  resources:
+  - kruisehooks
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - hook.tutorial.kubebuilder.io
+  resources:
+  - kruisehooks/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - hook.tutorial.kubebuilder.io
+  resources:
+  - kruisehooks/status
+  verbs:
+  - get
+  - patch
+  - update
