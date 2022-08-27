@@ -1,0 +1,12 @@
+domain: tutorial.kubebuilder.io
+layout:
+- go.kubebuilder.io/v3
+projectName: test
+repo: tutorial.kubebuilder.io/project
+resources:
+- controller: true
+  domain: tutorial.kubebuilder.io
+  group: hook
+  kind: KruiseHook
+  version: v1alpha1
+version: "3"
