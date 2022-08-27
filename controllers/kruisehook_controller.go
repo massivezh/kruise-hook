@@ -43,10 +43,6 @@ type KruiseHookReconciler struct {
 	Scheme *runtime.Scheme
 }
 
-//+kubebuilder:rbac:groups=hook.tutorial.kubebuilder.io,resources=kruisehooks,verbs=get;list;watch;create;update;patch;delete
-//+kubebuilder:rbac:groups=hook.tutorial.kubebuilder.io,resources=kruisehooks/status,verbs=get;update;patch
-//+kubebuilder:rbac:groups=hook.tutorial.kubebuilder.io,resources=kruisehooks/finalizers,verbs=update
-
 // +kubebuilder:rbac:groups=core,resources=pods,verbs=get;list;watch;update;patch
 func (r *KruiseHookReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
 	pod := &v1.Pod{}

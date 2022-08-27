@@ -89,6 +89,7 @@ func main() {
 
 	if err = (&controllers.KruiseHookReconciler{
 		Client: mgr.GetClient(),
+		Log:    ctrl.Log.WithName("controllers").WithName("KruiseHook"),
 		Scheme: mgr.GetScheme(),
 	}).SetupWithManager(mgr); err != nil {
 		setupLog.Error(err, "unable to create controller", "controller", "KruiseHook")
